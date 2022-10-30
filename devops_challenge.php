@@ -1,4 +1,4 @@
-
+<?php
 /**
  * @package Devops_challenge_Junior
  * @version 1.0
@@ -28,10 +28,22 @@ Segure o tchan
 Amarre o tchan
 Segure o tchan tchan tchan tchan
 Depois de nove meses você vê o resultado
-Esse é o Gera Samba arrebentando no pedaço
-Joga ela no meio, mete em cima, mete embaixo";
+Menina que requebra a mãe pega na cabeça
+Pau que nasce torto nunca se endireita
+Menina que requebra a mãe pega na cabeça
+Domingo ela não vai (vai, vai)
+Domingo ela não vai não (vai, vai, vai)
+Olha, domingo ela não vai (vai, vai)
+Domingo ela não vai não (vai, vai, vai)
+O pau que nasce torto nunca se endireita
+Menina que requebra a mãe pega na cabeça
+Pau que nasce torto nunca se endireita
+Menina que requebra a mãe pega na cabeça
+Segure o tchan
+Amarre o tchan
+Segure o tchan tchan tchan tchan";
 
-	$lyrics = explode( "\n", $lyrics )
+	$lyrics = explode( "\n", $lyrics );
 
 	return wptexturize( $lyrics[ mt_rand( 0, count( $lyrics ) - 1 ) ] );
 }
@@ -46,13 +58,13 @@ function devops_challenge() {
 
 	printf(
 		'<p id="devop"><span class="screen-reader-text">%s </span><span dir="ltr"%s>%s</span></p>',
-		__( 'Segure o Tchan, by Apiki WordPress:' ),
+		__( 'Segure o Tchan, by Apiki WordPress:','apiki_segura_o_tchan' ),
 		$lang,
 		$chosen
 	);
 }
 
-add_action( '', 'devops_challenge' );
+add_action( 'admin_notices', 'devops_challenge' );
 
 function devop_css() {
 	echo "
@@ -83,3 +95,5 @@ function devop_css() {
 }
 
 add_action( 'admin_head', 'devop_css' );
+
+?>
